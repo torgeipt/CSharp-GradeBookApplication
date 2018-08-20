@@ -48,8 +48,8 @@ namespace GradeBook.GradeBooks
                 return 'D';
             else if (fit == 4)
                 return 'E';
-            else
-                return 'F';
+
+            return 'F';
         }
     }
 }
