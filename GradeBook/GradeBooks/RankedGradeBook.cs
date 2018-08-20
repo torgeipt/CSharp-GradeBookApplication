@@ -1,6 +1,7 @@
 ﻿using GradeBook.Enums;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace GradeBook.GradeBooks
 {
@@ -13,8 +14,8 @@ namespace GradeBook.GradeBooks
         public override char GetLetterGrade(double averageGrade) {
             int numStudents = Students.Count;
 
-            if(numStudents < 5) {
-                throw new InvalidOperationException();
+            if (numStudents < 5) {
+                throw new InvalidOperationException("Cannot be fewer than 5 students");
             }
 
             // How many students to drop a grade(20%)
@@ -46,8 +47,6 @@ namespace GradeBook.GradeBooks
                 return 'C';
             else if (fit == 3)
                 return 'D';
-            else if (fit == 4)
-                return 'E';
 
             return 'F';
         }
